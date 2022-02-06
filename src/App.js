@@ -1,24 +1,32 @@
 import logo from './logo.svg';
 import './App.css';
+import Column from "./Column";
 
 function App() {
+  const tasks = [
+    {
+      id: 1,
+      title:'Learn JS',
+      status:'todo'
+
+    },
+  {
+    id: 2,
+    title:'Learn CSS',
+    status:'Progress'
+
+  },
+  {
+    id: 3,
+    title:'Learn React',
+    status:'Review'
+  }
+  ]
+  const statuses = ['todo','Progress','Review']
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+<div>
+  {statuses.map(status => <Column tasks={tasks} status={status}/>)}
+</div>
   );
 }
 
