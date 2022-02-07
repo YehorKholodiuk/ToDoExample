@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import Column from "./Column";
-
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import { Grid } from '@mui/material';
 function App() {
   const tasks = [
     {
@@ -22,10 +24,19 @@ function App() {
     status:'Review'
   }
   ]
-  const statuses = ['todo','Progress','Review']
+  const statuses = ['todo','Progress','Review'];
+  const createTaskButton = () =>{
+    console.log('create Task Button')
+  }
   return (
 <div>
-  {statuses.map(status => <Column tasks={tasks} status={status}/>)}
+  <Button variant="contained" disableElevation onClick={createTaskButton}>Create Task</Button>;
+  <TextField id="outlined-basic" label="Outlined" variant="outlined" value={123}/>
+  <Grid container spacing={2}>
+    {statuses.map(status => <Column tasks={tasks} status={status}/>)}
+
+  </Grid>
+
 </div>
   );
 }

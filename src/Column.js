@@ -1,10 +1,15 @@
 import React from 'react';
+import {Grid} from "@mui/material";
 
 const Column = (props) => {
     return (
-        <div>
+
+        <Grid item xs={3}>
+        <ul>
+
             {props.tasks.filter(task => task.status === props.status).map(task => <li key={task.id}>{task.title} </li>)}
-        </div>
+        </ul>
+            </Grid>
     );
 };
 
